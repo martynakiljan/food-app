@@ -1,0 +1,45 @@
+@import "../../styles/all.scss";
+
+.home__top {
+    display: flex;
+    align-items: center;
+}
+
+.home__input {
+    display: flex;
+    align-items: center;
+    font-family: "Exo", sans-serif;
+}
+
+input:focus {
+    border-color: $color-primary;
+    outline: 0;
+}
+
+.home__input--input {
+    background-color: transparent;
+    border: 2px solid $color-main;
+    height: 30px;
+    padding: 5px 10px;
+
+}
+
+svg.fa-magnifying-glass {
+    color: $color-main;
+    padding: 0 10px;
+    width: 20px;
+    height: 20px;
+}
+
+.home__nav {
+    padding: 10px 0;
+}
+
+.home__title {
+    font-size: 40px;
+    color: $color-main;
+    font-family: "Shadows Into Light", cursive;
+    font-weight: 400;
+    font-style: normal;
+    padding: 0 50px;
+}

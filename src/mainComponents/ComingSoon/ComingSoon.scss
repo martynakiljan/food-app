@@ -1,0 +1,32 @@
+@import "../../styles/all.scss";
+
+.comingSoon__img {
+    background-image: url(../../images//restaurant.jpg);
+    background-repeat: no-repeat;
+    width: 100vh;
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.comingSoon__text {
+    color: $color-bg;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.comingSoon__title {
+    font-size: 50px;
+}
+
+.comingSoon__subtitle {
+    font-size: 40px;
+}
+
+.comingSoon__info {
+    font-size: 20px;
+    font-style: italic;
+}
