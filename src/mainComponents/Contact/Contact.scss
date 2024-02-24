@@ -1,8 +1,7 @@
 @import "../../styles/all.scss";
 
 .form {
-    margin: 0 auto;
-    padding: 0 50px;
+    @include content-width()
 }
 
 .form__wrapper {
@@ -21,7 +20,11 @@
     border: 2px solid $color-main;
     background-color: transparent;
     margin: 15px 0;
-    min-width: 300px;
+    min-width: 200px;
+
+    @include md-min {
+        min-width: 300px;
+    }
 }
 
 .form__button {

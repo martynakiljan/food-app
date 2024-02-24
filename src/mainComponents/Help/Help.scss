@@ -11,7 +11,8 @@
 }
 
 .help-wrapper {
-    padding: 0 50px;
+
+    @include content-width();
 }
 
 .form__link {

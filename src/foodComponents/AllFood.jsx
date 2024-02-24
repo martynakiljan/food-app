@@ -1,5 +1,5 @@
 /** @format */
-import "./foods.scss";
+import "../styles/all.scss";
 
 const AllFood = () => {
   return (

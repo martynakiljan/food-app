@@ -6,7 +6,13 @@
     width: 100%;
     display: flex;
     align-items: center;
-    margin: 10px 50px;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    @include md-min {
+        margin: 10px 50px;
+        justify-content: flex-start;
+    }
 
 }
 
@@ -16,11 +22,12 @@
     border: 1px solid $color-primary;
     padding: 5px 10px;
     font-weight: bold;
-    margin: 0 10px;
+    margin: 10px;
 
     &:first-of-type {
         margin-left: 0;
     }
+
 
 
     a {

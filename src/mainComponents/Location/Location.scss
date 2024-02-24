@@ -1,8 +1,11 @@
 @import "../../styles/all.scss";
 
 .location {
-    padding: 0 50px;
-    display: flex;
+    @include content-width();
+
+    @include md-min {
+        display: flex;
+    }
 }
 
 .location__title {

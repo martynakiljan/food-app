@@ -25,8 +25,14 @@
 .home__top {
 
     display: flex;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
     height: 30vh;
+
+    @include md-min {
+        flex-direction: row;
+    }
 }
 
 .home__input {
@@ -54,6 +60,10 @@ input:focus {
     height: 30px;
     padding: 10px 20px;
 
+    @include md-min {
+        padding: 20px 30px;
+    }
+
 }
 
 svg.fa-magnifying-glass {
@@ -75,5 +85,10 @@ svg.fa-magnifying-glass {
     font-family: "Shadows Into Light", cursive;
     font-weight: 400;
     font-style: normal;
-    padding: 0 50px;
+
+
+    @include md-min {
+        padding: 0 50px;
+        font-size: 60px;
+    }
 }
