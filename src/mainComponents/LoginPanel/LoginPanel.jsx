@@ -1,5 +1,6 @@
 /** @format */
 import { useState, useEffect } from "react";
+import "./LoginPanel.scss";
 
 const LoginPanel = () => {
   const [ip, setIp] = useState();
@@ -15,10 +16,10 @@ const LoginPanel = () => {
   };
 
   return (
-    <>
+    <div className="login-panel">
       <h1>User</h1>
       <p>Your IP is {ip}.</p>
-    </>
+    </div>
   );
 };
 

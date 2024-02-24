@@ -17,6 +17,7 @@ const NavFood = () => {
       <li className="navfood__link">
         <NavLink to="/FastFood">Fast food</NavLink>
       </li>
+      
     </ul>
   );
 };

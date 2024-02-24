@@ -1,0 +1,22 @@
+@import "../../styles/all.scss";
+
+.location {
+    padding: 0 50px;
+    display: flex;
+}
+
+.location__title {
+    margin-bottom: 20px;
+}
+
+.location__email {
+    color: $color-primary;
+}
+
+.location__text {
+    margin-right: 30px;
+}
+
+.location__address-wrapper {
+    margin-bottom: 30px;
+}

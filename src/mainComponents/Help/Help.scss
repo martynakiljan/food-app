@@ -1,1 +1,25 @@
 @import "../../styles/all.scss";
+
+
+.css-1c35hjw-MuiPaper-root-MuiAccordion-root {
+    background-color: $color-primary !important;
+    color: $color-bg !important;
+}
+
+.css-i4bv87-MuiSvgIcon-root {
+    fill: $color-bg !important;
+}
+
+.help-wrapper {
+    padding: 0 50px;
+}
+
+.form__link {
+    font-weight: bold;
+    color: $color-primary;
+    text-decoration: solid;
+}
+
+.help__question {
+    margin-top: 50px;
+}

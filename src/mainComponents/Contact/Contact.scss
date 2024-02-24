@@ -1,1 +1,34 @@
 @import "../../styles/all.scss";
+
+.form {
+    margin: 0 auto;
+    padding: 0 50px;
+}
+
+.form__wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.form__label {
+    display: flex;
+    flex-direction: column;
+}
+
+.form__input {
+    border: 2px solid $color-main;
+    background-color: transparent;
+    margin: 15px 0;
+    min-width: 300px;
+}
+
+.form__button {
+    background-color: $color-primary;
+    color: $color-bg;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+
+}

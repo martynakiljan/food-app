@@ -8,6 +8,7 @@ import {
   faQuestion,
   faHome,
   faMessage,
+  faLocationDot,
 } from "@fortawesome/free-solid-svg-icons";
 import { NavLink } from "react-router-dom";
 
@@ -32,6 +33,9 @@ const Nav = () => {
         </NavLink>
         <NavLink to="/Contact" className="nav__item nav-item__q&a">
           <FontAwesomeIcon icon={faMessage} />
+        </NavLink>
+        <NavLink to="/Location" className="nav__item nav-item__location">
+          <FontAwesomeIcon icon={faLocationDot} />
         </NavLink>
       </div>
     </div>

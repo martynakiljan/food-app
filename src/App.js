@@ -9,6 +9,7 @@ import LoginPanel from "./mainComponents/LoginPanel/LoginPanel.jsx";
 import Contact from "./mainComponents/Contact/Contact";
 import Help from "./mainComponents/Help/Help";
 import ComingSoon from "./mainComponents/ComingSoon/ComingSoon";
+import Location from "./mainComponents/Location/Location";
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
             <Route path="ComingSoon" element={<ComingSoon />} />
             <Route path="Help" element={<Help />} />
             <Route path="LoginPanel" element={<LoginPanel />} />
+            <Route path="Location" element={<Location />} />
           </Route>
         </Routes>
       </div>

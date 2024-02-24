@@ -1,14 +1,12 @@
 @import "../../styles/all.scss";
 
-.navfood {
-    padding: 0 50px;
-}
+.navfood {}
 
 .navfood__list {
     width: 100%;
     display: flex;
     align-items: center;
-    margin: 10px 0;
+    margin: 10px 50px;
 
 }
 
@@ -19,6 +17,10 @@
     padding: 5px 10px;
     font-weight: bold;
     margin: 0 10px;
+
+    &:first-of-type {
+        margin-left: 0;
+    }
 
 
     a {

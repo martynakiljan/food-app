@@ -13,32 +13,36 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 const Home = () => {
   return (
     <>
-      <div className="home__top">
-        <h1 className="home__title">Are you hunger?</h1>
-        <div class="home__input">
-          <div class="home__input__icon">
-            <FontAwesomeIcon icon={faMagnifyingGlass} />
+      <header className="home__header">
+        <div className="home__header--mask"></div>
+        <div className="home__top">
+          <h1 className="home__title">Are you hunger?</h1>
+          <div class="home__input">
+            <div class="home__input__icon">
+              <FontAwesomeIcon icon={faMagnifyingGlass} />
+            </div>
+            <input
+              class="home__input--input"
+              placeholder="Search food..."
+            ></input>
           </div>
-          <input
-            class="home__input--input"
-            placeholder="Search food..."
-          ></input>
         </div>
-      </div>
-      <div className="home__panel">
-        <div className="home__nav">
-          <NavFood />
+      </header>
+
+      <div className="navfood">
+        <div className="home__panel">
+          <div className="home__nav">
+            <NavFood />
+          </div>
         </div>
-        <div className="navfood">
-          <Routes>
-            <Route path="/">
-              <Route index path="AllFood" element={<AllFood />} />
-              <Route path="ChineseFood" element={<ChineseFood />} />
-              <Route path="ItalianFood" element={<ItalianFood />} />
-              <Route path="FastFood" element={<FastFood />} />
-            </Route>
-          </Routes>
-        </div>
+        <Routes>
+          <Route path="/">
+            <Route index path="AllFood" element={<AllFood />} />
+            <Route path="ChineseFood" element={<ChineseFood />} />
+            <Route path="ItalianFood" element={<ItalianFood />} />
+            <Route path="FastFood" element={<FastFood />} />
+          </Route>
+        </Routes>
       </div>
     </>
   );

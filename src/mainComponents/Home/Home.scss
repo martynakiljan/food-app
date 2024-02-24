@@ -1,14 +1,45 @@
 @import "../../styles/all.scss";
 
+
+.home__header {
+    background-image: url(../../images/header.jpg);
+    mask-mode: alpha;
+    width: 100%;
+    position: relative;
+    height: 30vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+}
+
+.home__header--mask {
+    background-color: black;
+    opacity: 0.5;
+    position: absolute;
+    top: 0;
+    height: 100%;
+    left: 0;
+    right: 0;
+}
+
 .home__top {
+
     display: flex;
     align-items: center;
+    height: 30vh;
 }
 
 .home__input {
+    z-index: 12;
     display: flex;
     align-items: center;
     font-family: "Exo", sans-serif;
+
+}
+
+input::placeholder {
+    color: $color-bg;
+    opacity: 1;
 }
 
 input:focus {
@@ -17,15 +48,17 @@ input:focus {
 }
 
 .home__input--input {
+    z-index: 12;
     background-color: transparent;
-    border: 2px solid $color-main;
+    border: 1px solid $color-bg;
     height: 30px;
-    padding: 5px 10px;
+    padding: 10px 20px;
 
 }
 
 svg.fa-magnifying-glass {
-    color: $color-main;
+    z-index: 12;
+    color: $color-bg;
     padding: 0 10px;
     width: 20px;
     height: 20px;
@@ -36,8 +69,9 @@ svg.fa-magnifying-glass {
 }
 
 .home__title {
+    z-index: 12;
     font-size: 40px;
-    color: $color-main;
+    color: $color-bg;
     font-family: "Shadows Into Light", cursive;
     font-weight: 400;
     font-style: normal;
