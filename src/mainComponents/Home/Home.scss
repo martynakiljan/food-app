@@ -6,7 +6,7 @@
     mask-mode: alpha;
     width: 100%;
     position: relative;
-    height: 30vh;
+    height: 40vh;
     background-size: cover;
     background-repeat: no-repeat;
 
@@ -23,15 +23,17 @@
 }
 
 .home__top {
-
+    @include content-width();
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 30vh;
+    height: 40vh;
+    padding: 20px;
 
     @include md-min {
         flex-direction: row;
+        justify-content: space-between;
     }
 }
 
@@ -85,10 +87,45 @@ svg.fa-magnifying-glass {
     font-family: "Shadows Into Light", cursive;
     font-weight: 400;
     font-style: normal;
-
+    padding: 10px 0;
 
     @include md-min {
-        padding: 0 50px;
+        padding: 0;
         font-size: 60px;
+    }
+}
+
+.shopping__basket {
+    z-index: 11;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 0;
+
+    @include md-min {
+        padding: 0;
+    }
+}
+
+.shopping__button {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.shopping__price {
+    color: $color-bg;
+    font-weight: 600;
+    font-size: 12px;
+}
+
+.css-kd021m {
+    width: calc(100% - 40px) !important;
+    border: 2px solid $color-main !important;
+    background-color: $color-bg !important;
+    z-index: 222;
+
+    @include md-min {
+        width: 50% !important;
     }
 }

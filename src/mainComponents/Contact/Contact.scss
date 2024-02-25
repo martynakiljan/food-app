@@ -21,9 +21,10 @@
     background-color: transparent;
     margin: 15px 0;
     min-width: 200px;
+    padding: 5px 10px;
 
     @include md-min {
-        min-width: 300px;
+        min-width: 500px;
     }
 }
 
