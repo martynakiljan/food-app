@@ -1,6 +1,5 @@
 @import "../../styles/all.scss";
 
-.navfood {}
 
 .navfood__list {
     width: 100%;
@@ -40,4 +39,21 @@
     .active {
         color: $color-main;
     }
+}
+
+.navfood__select-input {
+    background-color: transparent;
+    border: none;
+}
+
+.navfood__select-label {
+    font-size: 12px;
+    font-weight: lighter;
+}
+
+.navfood__select {
+    margin: 0 10px;
+    padding: 5px 15px;
+    background-color: transparent;
+
 }
