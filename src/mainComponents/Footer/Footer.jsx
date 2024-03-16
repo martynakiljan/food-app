@@ -5,9 +5,9 @@ import "./Footer.scss";
 
 const Footer = () => {
   return (
-    <div class="footer">
+    <div className="footer">
       <div className="footer__inner">
-        <p class="footer__copyright">
+        <p className="footer__copyright">
           <FontAwesomeIcon icon={faCopyright} />
           Food App 2024
         </p>

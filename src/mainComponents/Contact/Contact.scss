@@ -1,7 +1,8 @@
 @import "../../styles/all.scss";
 
 .form {
-    @include content-width()
+    @include content-width();
+    padding-bottom: 20px;
 }
 
 .form__wrapper {
@@ -35,4 +36,15 @@
     padding: 5px 10px;
     cursor: pointer;
 
+}
+
+.error {
+    color: $color-error;
+    padding-bottom: 15px;
+}
+
+.form-correct {
+    color: $color-primary;
+    font-weight: bold;
+    margin-top: 15px;
 }

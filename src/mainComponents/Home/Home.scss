@@ -119,13 +119,135 @@ svg.fa-magnifying-glass {
     font-size: 12px;
 }
 
-.css-kd021m {
-    width: calc(100% - 40px) !important;
-    border: 2px solid $color-main !important;
+
+.css-1wnsr1i {
+    border: 2px solid $color-dark-blue !important;
     background-color: $color-bg !important;
-    z-index: 222;
+    width: calc(100% - 40px) !important;
+    padding: 10px !important;
+
 
     @include md-min {
         width: 50% !important;
+        max-width: 450px !important;
+    }
+}
+
+.toggleContainer {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    width: fit-content;
+    border: 3px solid $color-dark-blue;
+    border-radius: 20px;
+    background: $color-dark-blue;
+    font-weight: bold;
+    color: $color-dark-blue;
+    cursor: pointer;
+}
+
+.toggleContainer::before {
+    content: '';
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    left: 0%;
+    border-radius: 20px;
+    background: white;
+    transition: all 0.3s;
+}
+
+.toggleCheckbox:checked+.toggleContainer::before {
+    left: 50%;
+}
+
+.toggleContainer div {
+    padding: 6px;
+    text-align: center;
+    z-index: 1;
+}
+
+.toggleCheckbox {
+    display: none;
+}
+
+.toggleCheckbox:checked+.toggleContainer div:first-child {
+    color: white;
+    transition: color 0.3s;
+}
+
+.toggleCheckbox:checked+.toggleContainer div:last-child {
+    color: #343434;
+    transition: color 0.3s;
+}
+
+.toggleCheckbox+.toggleContainer div:first-child {
+    color: #343434;
+    transition: color 0.3s;
+}
+
+.toggleCheckbox+.toggleContainer div:last-child {
+    color: white;
+    transition: color 0.3s;
+}
+
+.order__item {
+    margin-top: 20px;
+}
+
+.order__price,
+.order__item--text {
+    font-weight: 600;
+}
+
+.order__adnotation--buttons,
+.order__price,
+.order__item,
+.order__adnotation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.svg-inline--fa.fa-plus,
+.svg-inline--fa.fa-minus {
+    color: $color-dark-blue;
+    height: 20px;
+    border-radius: 50%;
+    width: 20px;
+}
+
+.order__info {
+    background-color: #ffcc99;
+    padding: 5px 10px;
+    font-size: 10px;
+    font-style: italic;
+    margin: 10px 0;
+}
+
+.order__adnotation--num {
+    padding: 0 15px;
+}
+
+.order__price--price {
+    color: $color-dark-blue;
+}
+
+.order__price--button {
+    background-color: transparent;
+    border: 2px solid $color-dark-blue;
+    color: $color-dark-blue;
+    padding: 5px 15px;
+    font-size: 20px;
+    font-weight: bold;
+    margin: 20px auto;
+    width: 100%;
+
+    &:hover {
+        background-color: $color-primary;
+        color: $color-bg;
+        border: 2px solid $color-primary;
+        cursor: pointer;
     }
 }
