@@ -87,7 +87,11 @@ const Contact = () => {
           Submit
         </button>
 
-        {formCorrect ? <p className="form-correct">Thank you!</p> : null}
+        {formCorrect ? (
+          <p className="form-correct">Thank you!</p>
+        ) : (
+          <p className="form-not-correct">please fill out the form</p>
+        )}
       </form>
     </div>
   );
