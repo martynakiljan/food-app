@@ -1,17 +1,16 @@
 /** @format */
-import * as React from "react";
+import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import "./NavFood.scss";
-import InputLabel from "@mui/material/InputLabel";
-import FormControl from "@mui/material/FormControl";
-import Select from "@mui/material/Select";
 
-const NavFood = () => {
-  const [sortValue, sortSetValue] = React.useState("");
+const NavFood = ({ onSortChange }) => {
+  const [sortValue, setSortValue] = useState("");
 
-  const handleChange = (event) => {
-    sortSetValue(event.target.value);
-  };
+  const handleChangeSort = (event) => {
+    const value = event.target.value;
+    setSortValue(value);
+    onSortChange(value); 
+  }
 
   return (
     <ul className="navfood__list">
@@ -30,9 +29,13 @@ const NavFood = () => {
       <li className="navfood__link navfood__select-input">
         <label className="navfood__select-label">
           Sort by:
-          <select className="navfood__select">
-            <option value="someOption">price up</option>
-            <option value="otherOption">price down</option>
+          <select
+            className="navfood__select"
+            value={sortValue}
+            onChange={handleChangeSort}
+          >
+            <option value="priceUp">price up</option>
+            <option value="priceDown">price down</option>
           </select>
         </label>
       </li>

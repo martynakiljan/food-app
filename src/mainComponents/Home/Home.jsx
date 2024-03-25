@@ -1,12 +1,12 @@
 /** @format */
 import "./Home.scss";
-import React from "react";
+import React, { useState } from "react";
 import NavFood from "../NavFood/NavFood";
 import AllFood from "../../foodComponents/AllFood";
 import ChineseFood from "../../foodComponents/ChineseFood";
 import FastFood from "../../foodComponents/FastFood";
 import ItalianFood from "../../foodComponents/ItalianFood";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, Navigate } from "react-router-dom";
 import Box from "@mui/material/Box";
 import {
   faMagnifyingGlass,
@@ -16,9 +16,12 @@ import Fade from "@mui/material/Fade";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Modal } from "@mui/material";
 import { faMinus, faPlus } from "@fortawesome/free-solid-svg-icons";
+import { SortProvider } from "../../context/context.js";
 
 const Home = () => {
+  const [searchQuery, setSearchQuery] = useState("");
   const [open, setOpen] = React.useState(false);
+
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
 
@@ -34,6 +37,16 @@ const Home = () => {
     p: 4,
   };
 
+  const handleSearchChange = (event) => {
+    setSearchQuery(event.target.value);
+  };
+
+  const [sortValue, setSortValue] = useState("");
+
+  const handleSortChange = (value) => {
+    setSortValue(value);
+  };
+
   return (
     <>
       <header className="home__header">
@@ -47,6 +60,7 @@ const Home = () => {
             <input
               className="home__input--input"
               placeholder="Search food..."
+              onChange={handleSearchChange}
             ></input>
           </div>
           <div className="shopping__basket">
@@ -117,16 +131,20 @@ const Home = () => {
       <div className="navfood">
         <div className="home__panel">
           <div className="home__nav">
-            <NavFood />
+            <NavFood onSortChange={handleSortChange} />
           </div>
         </div>
         <Routes>
-          <Route path="/">
-            <Route index path="AllFood" element={<AllFood />} />
-            <Route path="ChineseFood" element={<ChineseFood />} />
-            <Route path="ItalianFood" element={<ItalianFood />} />
-            <Route path="FastFood" element={<FastFood />} />
-          </Route>
+          <Route path="/" element={<Navigate to="/AllFood" />} />
+          <Route
+            path="/AllFood"
+            element={
+              <AllFood searchQuery={searchQuery} sortValue={sortValue} />
+            }
+          />
+          <Route path="ChineseFood" element={<ChineseFood />} />
+          <Route path="ItalianFood" element={<ItalianFood />} />
+          <Route path="FastFood" element={<FastFood />} />
         </Routes>
       </div>
     </>

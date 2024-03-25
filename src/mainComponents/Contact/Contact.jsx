@@ -38,6 +38,7 @@ const Contact = () => {
           <input
             className="form__input"
             label="Name"
+            aria-invalid={errors.name ? "true" : "false"}
             {...register("name", {
               required: true,
               minLength: 3,
@@ -57,6 +58,7 @@ const Contact = () => {
           <input
             className="form__input"
             label="Email"
+            aria-invalid={errors.email ? "true" : "false"}
             {...register("email", {
               required: "Email is required",
               pattern: {
@@ -66,14 +68,15 @@ const Contact = () => {
           />
         </label>
         {errors?.email?.type === "pattern" && (
-          <p className="error">Invalid email address </p>
+          <p className="error">invalid email address </p>
         )}
         <label className="form__label">
           Message
           <textarea
+            aria-invalid={errors.message ? "true" : "false"}
             {...register("message", {
               required: true,
-              minLength: 10,
+              minLength: 5,
               maxLength: 1000,
             })}
             className="form__input form__input--textarea"
@@ -81,7 +84,7 @@ const Contact = () => {
           />
         </label>
         {errors?.message?.type === "minLength" && (
-          <p className="error">Write something more! (min 10 characters) </p>
+          <p className="error">write something more... </p>
         )}
         <button className="form__button" type="submit">
           Submit
