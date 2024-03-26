@@ -1,22 +1,34 @@
 /** @format */
+
 import FoodTile from "./FoodTile";
-import { FastFoodKitchen } from "../kitchenData/FastFoodKitchen/FastFoodKitchen";
 import "../styles/all.scss";
+import { useContext } from "react";
+import { Context } from "../context/context";
+import { filterFunction } from "../utilis/filterFunction";
+import { FastFoodKitchen } from "../kitchenData/FastFoodKitchen/FastFoodKitchen";
+import NoFoodFound from "./NoFoodFoodFound";
 
 const FastFood = () => {
+  const { searchQuery, sortValue } = useContext(Context);
+  const filteredFood = filterFunction(FastFoodKitchen, sortValue, searchQuery);
+
   return (
     <>
       <div className="food-panel">
-        {FastFoodKitchen.map(({ id, name, description, price, src }) => (
-          <FoodTile
-            id={id}
-            key={id}
-            name={name}
-            description={description}
-            price={price}
-            src={src}
-          />
-        ))}
+        {filteredFood.length !== 0 ? (
+          filteredFood.map(({ id, name, description, price, src }) => (
+            <FoodTile
+              id={id}
+              key={id}
+              name={name}
+              description={description}
+              price={price}
+              src={src}
+            />
+          ))
+        ) : (
+          <NoFoodFound />
+        )}
       </div>
     </>
   );

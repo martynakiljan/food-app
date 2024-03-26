@@ -13,12 +13,16 @@ import {
 import { NavLink } from "react-router-dom";
 
 const Nav = () => {
+  const reloadPage = () => {
+    window.location.reload();
+  };
+
   return (
     <div className="nav">
       <div className="nav__icons">
-        <div className="nav__logo">
+        <button className="nav__logo" onClick={reloadPage}>
           <FontAwesomeIcon className="icon" icon={faBowlFood} />
-        </div>
+        </button>
         <NavLink to="/AllFood" className="nav__item nav-item__home">
           <FontAwesomeIcon icon={faHome} />
         </NavLink>

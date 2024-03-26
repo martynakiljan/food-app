@@ -4,7 +4,7 @@ import italianFoodImage2 from "../../foodImages/italianFoodImages/italianFood2.j
 import italianFoodImage3 from "../../foodImages/italianFoodImages/italianFood3.jpg";
 import italianFoodImage4 from "../../foodImages/italianFoodImages/italianFood4.jpg";
 
-export const italianKitchen = [
+export const ItalianKitchen = [
   {
     id: "1",
     name: "Brusketta",

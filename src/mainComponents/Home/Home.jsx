@@ -16,14 +16,29 @@ import Fade from "@mui/material/Fade";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Modal } from "@mui/material";
 import { faMinus, faPlus } from "@fortawesome/free-solid-svg-icons";
-import { SortProvider } from "../../context/context.js";
+import { Context } from "../../context/context";
 
 const Home = () => {
-  const [searchQuery, setSearchQuery] = useState("");
+  //open and close modal//
   const [open, setOpen] = React.useState(false);
-
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
+
+  // search //
+  const [searchQuery, setSearchQuery] = useState("");
+  const handleSearchChange = (event) => {
+    const inputValue = event.target.value.trim();
+
+    if (inputValue !== "") {
+      setSearchQuery(inputValue);
+    }
+  };
+
+  //sort//
+  const [sortValue, setSortValue] = useState("");
+  const handleSortChange = (value) => {
+    setSortValue(value);
+  };
 
   const style = {
     position: "absolute",
@@ -37,18 +52,15 @@ const Home = () => {
     p: 4,
   };
 
-  const handleSearchChange = (event) => {
-    setSearchQuery(event.target.value);
-  };
-
-  const [sortValue, setSortValue] = useState("");
-
-  const handleSortChange = (value) => {
-    setSortValue(value);
-  };
-
   return (
-    <>
+    <Context.Provider
+      value={{
+        sortValue,
+        setSortValue,
+        searchQuery,
+        setSearchQuery,
+      }}
+    >
       <header className="home__header">
         <div className="home__header--mask"></div>
         <div className="home__top">
@@ -147,7 +159,7 @@ const Home = () => {
           <Route path="FastFood" element={<FastFood />} />
         </Routes>
       </div>
-    </>
+    </Context.Provider>
   );
 };
 
