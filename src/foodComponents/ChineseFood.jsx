@@ -2,13 +2,13 @@
 import FoodTile from "./FoodTile";
 import "../styles/all.scss";
 import { useContext } from "react";
-import { Context } from "../context/context";
+import { FilterContext } from "../context/FilterContext";
 import { filterFunction } from "../utilis/filterFunction";
 import { ChineseKitchen } from "../kitchenData/ChineseKitchen/ChineseKitchen";
 import NoFoodFound from "./NoFoodFoodFound";
 
 const ChineseFood = () => {
-  const { sortValue, searchQuery } = useContext(Context);
+  const { sortValue, searchQuery } = useContext(FilterContext);
   const filteredFood = filterFunction(ChineseKitchen, sortValue, searchQuery);
 
   return (

@@ -111,6 +111,7 @@ svg.fa-magnifying-glass {
     background: transparent;
     border: none;
     cursor: pointer;
+    padding: 20px;
 }
 
 .shopping__price {
@@ -191,63 +192,3 @@ svg.fa-magnifying-glass {
     transition: color 0.3s;
 }
 
-.order__item {
-    margin-top: 20px;
-}
-
-.order__price,
-.order__item--text {
-    font-weight: 600;
-}
-
-.order__adnotation--buttons,
-.order__price,
-.order__item,
-.order__adnotation {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-}
-
-.svg-inline--fa.fa-plus,
-.svg-inline--fa.fa-minus {
-    color: $color-dark-blue;
-    height: 20px;
-    border-radius: 50%;
-    width: 20px;
-}
-
-.order__info {
-    background-color: #ffcc99;
-    padding: 5px 10px;
-    font-size: 10px;
-    font-style: italic;
-    margin: 10px 0;
-}
-
-.order__adnotation--num {
-    padding: 0 15px;
-}
-
-.order__price--price {
-    color: $color-dark-blue;
-}
-
-.order__price--button {
-    background-color: transparent;
-    border: 2px solid $color-dark-blue;
-    color: $color-dark-blue;
-    padding: 5px 15px;
-    font-size: 20px;
-    font-weight: bold;
-    margin: 20px auto;
-    width: 100%;
-
-    &:hover {
-        background-color: $color-primary;
-        color: $color-bg;
-        border: 2px solid $color-primary;
-        cursor: pointer;
-    }
-}

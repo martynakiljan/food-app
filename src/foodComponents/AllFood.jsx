@@ -6,12 +6,13 @@ import { ItalianKitchen } from "../kitchenData/ItalianKitchen/ItalianKitchen";
 import { FastFoodKitchen } from "../kitchenData/FastFoodKitchen/FastFoodKitchen";
 import FoodTile from "./FoodTile";
 import { v4 as uuidv4 } from "uuid";
-import { Context } from "../context/context";
+import { FilterContext} from "../context/FilterContext";
 import { filterFunction } from "../utilis/filterFunction";
 import NoFoodFound from "./NoFoodFoodFound";
 
 const AllFood = () => {
-  const { sortValue, searchQuery } = useContext(Context);
+  
+  const { sortValue, searchQuery } = useContext(FilterContext);
   const allFood = ChineseKitchen.concat(ItalianKitchen, FastFoodKitchen);
   const filteredFood = filterFunction(allFood, sortValue, searchQuery);
 

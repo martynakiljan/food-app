@@ -9,6 +9,8 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
+        flex-wrap: wrap;
+
     }
 
     @include md-min {
@@ -47,17 +49,13 @@
 }
 
 .foodTile__img {
-    width: 200px;
-    height: 200px;
+    width: 150px;
+    height: 150px;
     border-radius: 50%;
     display: flex;
     object-fit: cover;
     border: 1px solid $color-primary;
 
-    @include md-min {
-        width: 150px;
-        height: 150px;
-    }
 }
 
 .fa-cart-shopping {

@@ -19,7 +19,10 @@ const Location = () => {
       </div>
 
       <div className="location__map">
-        <iframe src="https://maps.google.com/maps?width=311&amp;height=500&amp;hl=en&amp;q=Ankerstrasse%20Z%C3%BCrich+(Restaurant)&amp;t=p&amp;z=13&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe>{" "}
+        <iframe
+          title="location"
+          src="https://maps.google.com/maps?width=311&amp;height=500&amp;hl=en&amp;q=Ankerstrasse%20Z%C3%BCrich+(Restaurant)&amp;t=p&amp;z=13&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
+        ></iframe>{" "}
         <script
           type="text/javascript"
           src="https://embedmaps.com/google-maps-authorization/script.js?id=7f36ce19448a7528f81a778c8414a0af31bb4c69"

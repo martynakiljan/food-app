@@ -7,22 +7,17 @@ import ChineseFood from "../../foodComponents/ChineseFood";
 import FastFood from "../../foodComponents/FastFood";
 import ItalianFood from "../../foodComponents/ItalianFood";
 import { Routes, Route, Navigate } from "react-router-dom";
-import Box from "@mui/material/Box";
 import {
   faMagnifyingGlass,
   faCartShopping,
 } from "@fortawesome/free-solid-svg-icons";
-import Fade from "@mui/material/Fade";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Modal } from "@mui/material";
-import { faMinus, faPlus } from "@fortawesome/free-solid-svg-icons";
-import { Context } from "../../context/context";
+import { FilterContext } from "../../context/FilterContext";
+import Popup from "../Popup/Popup";
+import { useBasket } from "../../context/BasketContext";
 
 const Home = () => {
-  //open and close modal//
-  const [open, setOpen] = React.useState(false);
-  const handleOpen = () => setOpen(true);
-  const handleClose = () => setOpen(false);
+  const { handleOpen, totalPrice } = useBasket();
 
   // search //
   const [searchQuery, setSearchQuery] = useState("");
@@ -40,20 +35,8 @@ const Home = () => {
     setSortValue(value);
   };
 
-  const style = {
-    position: "absolute",
-    top: "50%",
-    left: "50%",
-    transform: "translate(-50%, -50%)",
-    width: 400,
-    bgcolor: "background.paper",
-    border: "2px solid #000",
-    boxShadow: 24,
-    p: 4,
-  };
-
   return (
-    <Context.Provider
+    <FilterContext.Provider
       value={{
         sortValue,
         setSortValue,
@@ -78,64 +61,9 @@ const Home = () => {
           <div className="shopping__basket">
             <button onClick={handleOpen} className="shopping__button">
               <FontAwesomeIcon icon={faCartShopping} />
-              <p className="shopping__price">23.50 CHF</p>
+              <p className="shopping__price">{totalPrice} CHF</p>
             </button>
-
-            <div className="shopping__modal">
-              <Modal
-                aria-labelledby="transition-modal-title"
-                aria-describedby="transition-modal-description"
-                open={open}
-                onClose={handleClose}
-                closeAfterTransition
-              >
-                <Fade in={open}>
-                  <Box sx={style}>
-                    <div className="shopping__box">
-                      <input
-                        type="checkbox"
-                        id="toggle"
-                        className="toggleCheckbox"
-                      />
-                      <label for="toggle" className="toggleContainer">
-                        <div>Delivery</div>
-                        <div>Take away</div>
-                      </label>
-                      <div className="order__item">
-                        <p className="order__item--text">Pizza Margarita</p>
-                        <p className="order__item--text">13.40 CHF</p>
-                      </div>
-
-                      <div className="order__adnotation">
-                        <p className="order__adnotation--text">
-                          Add adnotation
-                        </p>
-                        <div className="order__adnotation--buttons">
-                          <FontAwesomeIcon icon={faPlus} />
-                          <p className="order__adnotation--num">1</p>
-                          <FontAwesomeIcon icon={faMinus} />
-                        </div>
-                      </div>
-
-                      <div className="order__info">
-                        <p className="order__info--text">
-                          * minimum order is 9 CHF
-                        </p>
-                      </div>
-
-                      <div className="order__price">
-                        <p className="order__price--text">
-                          All together to pay:
-                        </p>
-                        <p className="order__price--price">23.34 CHF</p>
-                      </div>
-
-                      <button className="order__price--button">PAY</button>
-                    </div>
-                  </Box>
-                </Fade>
-              </Modal>
-            </div>
+            <Popup />
           </div>
         </div>
       </header>
@@ -159,7 +87,7 @@ const Home = () => {
           <Route path="FastFood" element={<FastFood />} />
         </Routes>
       </div>
-    </Context.Provider>
+    </FilterContext.Provider>
   );
 };
 
