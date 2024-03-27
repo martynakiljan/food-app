@@ -2,12 +2,11 @@ in progress...
 
 
 
-<h1> TODO LIST </h1>
+<h1> EAT APP  </h1>
 
 -------
 
 🔶 Technologies: REACT, NPM and MUI (https://mui.com/ -  The React component library
-
 
 
 <h3>How to open a file? :eyes: </h3>
