@@ -6,7 +6,7 @@ in progress...
 
 -------
 
-🔶 Technologies: REACT, NPM and MUI (https://mui.com/ -  The React component library
+🔶 Technologies: REACT, NPM
 
 
 <h3>How to open a file? :eyes: </h3>
