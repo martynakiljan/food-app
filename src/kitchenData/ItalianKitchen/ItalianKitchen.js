@@ -10,7 +10,7 @@ export const ItalianKitchen = [
     name: "Brusketta",
     description:
       "Bruschetta is an antipasto dish made with grilled bread topped with vegetables, grated garlic and a tomato mixture.",
-    price: "6.80",
+    price: "1.80",
     src: italianFoodImage1,
   },
   {

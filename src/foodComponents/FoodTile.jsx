@@ -9,7 +9,7 @@ const FoodTile = ({ id, name, price, src }) => {
 
   return (
     <div className="foodTile" id={id}>
-      <img className="foodTile__img" src={src} alt="img"></img>
+      <img className="foodTile__img" src={src} alt="img" />
       <div className="foodTile__wrapper-text">
         <p className="foodTile__title">{name}</p>
         <p className="foodTile__price">{price} CHF</p>

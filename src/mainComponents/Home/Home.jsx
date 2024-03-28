@@ -79,7 +79,7 @@ const Home = () => {
           <Route
             path="/AllFood"
             element={
-              <AllFood searchQuery={searchQuery} sortValue={sortValue} />
+              <AllFood />
             }
           />
           <Route path="ChineseFood" element={<ChineseFood />} />

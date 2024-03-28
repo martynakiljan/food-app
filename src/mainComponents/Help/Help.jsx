@@ -6,6 +6,7 @@ import AccordionSummary from "@mui/material/AccordionSummary";
 import AccordionDetails from "@mui/material/AccordionDetails";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import "./Help.scss";
+import { Link } from "react-router-dom";
 
 const Help = () => {
   return (
@@ -54,9 +55,17 @@ const Help = () => {
 
         <h2 className="help__question">Still have questions?</h2>
         <p className="help__text">
-          Can't find the answer you're looking for? Kindly fill the{" "}
-          <a className="form__link"> form</a> below Want to file a complaint?
-          Fill the form to get answers ASAP
+          <span>
+            {" "}
+            Can't find the answer you're looking for? Kindly fill the{" "}
+          </span>
+          <Link to="/Contact" className="form__link">
+            form
+          </Link>
+          <span>
+            {" "}
+            below Want to file a complaint? Fill the form to get answers ASAP
+          </span>
         </p>
       </div>
     </>

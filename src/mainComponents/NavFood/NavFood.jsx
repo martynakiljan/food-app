@@ -9,8 +9,8 @@ const NavFood = ({ onSortChange }) => {
   const handleChangeSort = (event) => {
     const value = event.target.value;
     setSortValue(value);
-    onSortChange(value); 
-  }
+    onSortChange(value);
+  };
 
   return (
     <ul className="navfood__list">
